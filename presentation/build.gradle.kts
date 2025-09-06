@@ -1,20 +1,15 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.freelancekc.fdjtechnicaltest"
+    namespace = "com.freelancekc.fdjtechnicaltest.presentation"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.freelancekc.fdjtechnicaltest"
         minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -27,33 +22,47 @@ android {
             )
         }
     }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    
     kotlinOptions {
         jvmTarget = "11"
     }
+    
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-    // Module dependencies
+    // Domain module
     implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":presentation"))
-
+    
+    // Core Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    
+    // Compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    
+    // Testing
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
