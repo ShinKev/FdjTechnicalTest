@@ -1,4 +1,4 @@
-package com.freelancekc.fdjtechnicaltest.ui.theme
+package com.freelancekc.fdjtechnicaltest.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -8,6 +8,10 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 dependencies {
     // Coroutines for async operations
     implementation(libs.kotlinx.coroutines.core)

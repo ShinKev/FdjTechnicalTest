@@ -52,13 +52,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    
+    implementation(libs.androidx.compose.material.icons.extended)
+
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+    
+    // Image loading
+    implementation(libs.coil.compose)
     
     // Testing
     testImplementation(libs.junit)
