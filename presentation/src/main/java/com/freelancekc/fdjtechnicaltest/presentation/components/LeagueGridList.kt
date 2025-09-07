@@ -14,12 +14,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.freelancekc.fdjtechnicaltest.domain.models.SoccerClub
+import com.freelancekc.fdjtechnicaltest.domain.models.Team
 import com.freelancekc.fdjtechnicaltest.presentation.theme.FdjTechnicalTestTheme
 
 @Composable
 fun LeagueGridList(
-    clubs: List<SoccerClub>,
+    clubs: List<Team>,
     modifier: Modifier = Modifier,
     isLoading: Boolean = false
 ) {
@@ -70,12 +70,12 @@ fun LeagueGridListWithDataPreview() {
     FdjTechnicalTestTheme {
         LeagueGridList(
             clubs = listOf(
-                SoccerClub("1", "Paris Saint-Germain", null),
-                SoccerClub("2", "Olympique de Marseille", null),
-                SoccerClub("3", "AS Monaco", null),
-                SoccerClub("4", "Olympique Lyonnais", null),
-                SoccerClub("5", "FC Nantes", null),
-                SoccerClub("6", "OGC Nice", null)
+                Team("1", "Paris Saint-Germain", null),
+                Team("2", "Olympique de Marseille", null),
+                Team("3", "AS Monaco", null),
+                Team("4", "Olympique Lyonnais", null),
+                Team("5", "FC Nantes", null),
+                Team("6", "OGC Nice", null)
             )
         )
     }

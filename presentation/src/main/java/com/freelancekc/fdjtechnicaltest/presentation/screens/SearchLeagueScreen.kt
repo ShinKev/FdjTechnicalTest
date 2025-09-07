@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
@@ -20,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.freelancekc.fdjtechnicaltest.domain.models.SoccerClub
+import com.freelancekc.fdjtechnicaltest.domain.models.Team
 import com.freelancekc.fdjtechnicaltest.presentation.components.CancelButton
 import com.freelancekc.fdjtechnicaltest.presentation.components.LeagueGridList
 import com.freelancekc.fdjtechnicaltest.presentation.components.SearchTextField
@@ -35,16 +34,16 @@ fun LeagueScreen(
     
     // Sample data for demonstration
     val sampleClubs = listOf(
-        SoccerClub("1", "Paris Saint-Germain", null),
-        SoccerClub("2", "Olympique de Marseille", null),
-        SoccerClub("3", "AS Monaco", null),
-        SoccerClub("4", "Olympique Lyonnais", null),
-        SoccerClub("5", "FC Nantes", null),
-        SoccerClub("6", "OGC Nice", null),
-        SoccerClub("7", "Stade Rennais", null),
-        SoccerClub("8", "RC Strasbourg Alsace", null),
-        SoccerClub("9", "AS Saint-Étienne", null),
-        SoccerClub("10", "Toulouse FC", null)
+        Team("1", "Paris Saint-Germain", null),
+        Team("2", "Olympique de Marseille", null),
+        Team("3", "AS Monaco", null),
+        Team("4", "Olympique Lyonnais", null),
+        Team("5", "FC Nantes", null),
+        Team("6", "OGC Nice", null),
+        Team("7", "Stade Rennais", null),
+        Team("8", "RC Strasbourg Alsace", null),
+        Team("9", "AS Saint-Étienne", null),
+        Team("10", "Toulouse FC", null)
     )
 
     Scaffold(
