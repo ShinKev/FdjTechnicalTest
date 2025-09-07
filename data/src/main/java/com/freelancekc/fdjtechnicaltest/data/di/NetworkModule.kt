@@ -1,7 +1,7 @@
 package com.freelancekc.fdjtechnicaltest.data.di
 
 import com.freelancekc.fdjtechnicaltest.data.api.SportsApiService
-import com.freelancekc.fdjtechnicaltest.domain.config.NetworkConfig
+import com.freelancekc.fdjtechnicaltest.data.config.NetworkConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.freelancekc.fdjtechnicaltest.domain.config
+package com.freelancekc.fdjtechnicaltest.data.config
 
 data class NetworkConfig(
     val baseUrl: String,

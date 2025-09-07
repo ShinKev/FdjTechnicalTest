@@ -1,7 +1,7 @@
 package com.freelancekc.fdjtechnicaltest.di
 
 import com.freelancekc.fdjtechnicaltest.BuildConfig
-import com.freelancekc.fdjtechnicaltest.domain.config.NetworkConfig
+import com.freelancekc.fdjtechnicaltest.data.config.NetworkConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
