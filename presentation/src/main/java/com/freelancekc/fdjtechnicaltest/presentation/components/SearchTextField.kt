@@ -42,11 +42,11 @@ fun SearchTextField(
         value = value,
         onValueChange = onValueChange,
         modifier = modifier.fillMaxWidth(),
-        textStyle = MaterialTheme.typography.titleLarge,
+        textStyle = MaterialTheme.typography.bodyLarge,
         placeholder = {
             Text(
                 text = placeholder,
-                style = MaterialTheme.typography.titleLarge
+                style = MaterialTheme.typography.bodyLarge
             )
         },
         leadingIcon = {
