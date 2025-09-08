@@ -128,7 +128,7 @@ fun LeagueScreen(
                         actioner.invoke(LeagueScreenActions.OnSuggestionClick(it))
                         focusManager.clearFocus()
                     },
-                    modifier = Modifier.padding(top = 78.dp, start = 16.dp, end = 16.dp)
+                    modifier = Modifier.padding(top = 58.dp, start = 16.dp, end = 16.dp)
                 )
             }
         }

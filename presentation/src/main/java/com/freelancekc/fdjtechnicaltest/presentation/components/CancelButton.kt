@@ -1,9 +1,10 @@
 package com.freelancekc.fdjtechnicaltest.presentation.components
 
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,10 +17,10 @@ fun CancelButton(
     modifier: Modifier = Modifier,
     text: String = "Cancel"
 ) {
-    TextButton(
-        onClick = onClick,
-        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
+    Box(
         modifier = modifier
+            .padding(horizontal = 4.dp, vertical = 8.dp)
+            .clickable(onClick = onClick)
     ) {
         Text(
             text = text,
