@@ -115,7 +115,7 @@ fun LeagueScreen(
                 }
 
                 LeagueGridList(
-                    clubs = uiState.teams,
+                    teams = uiState.teams,
                     isLoading = uiState.isLoadingTeams,
                     modifier = Modifier.weight(1f)
                 )

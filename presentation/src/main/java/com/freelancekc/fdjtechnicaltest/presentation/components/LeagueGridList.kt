@@ -20,7 +20,7 @@ import com.freelancekc.fdjtechnicaltest.presentation.theme.FdjTechnicalTestTheme
 
 @Composable
 fun LeagueGridList(
-    clubs: List<Team>,
+    teams: List<Team>,
     modifier: Modifier = Modifier,
     isLoading: Boolean = false
 ) {
@@ -44,10 +44,10 @@ fun LeagueGridList(
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                     contentPadding = PaddingValues(16.dp)
                 ) {
-                    items(clubs) { club ->
-                        ClubItem(
-                            imageUrl = club.imageUrl,
-                            clubName = club.name
+                    items(teams) { team ->
+                        TeamItem(
+                            imageUrl = team.imageUrl,
+                            teamName = team.name
                         )
                     }
                 }
@@ -61,7 +61,7 @@ fun LeagueGridList(
 fun LeagueGridListLoadingPreview() {
     FdjTechnicalTestTheme {
         LeagueGridList(
-            clubs = emptyList(),
+            teams = emptyList(),
             isLoading = true
         )
     }
@@ -72,7 +72,7 @@ fun LeagueGridListLoadingPreview() {
 fun LeagueGridListWithDataPreview() {
     FdjTechnicalTestTheme {
         LeagueGridList(
-            clubs = listOf(
+            teams = listOf(
                 Team("1", "Paris Saint-Germain", null),
                 Team("2", "Olympique de Marseille", null),
                 Team("3", "AS Monaco", null),

@@ -2,6 +2,7 @@ package com.freelancekc.fdjtechnicaltest.di
 
 import com.freelancekc.fdjtechnicaltest.domain.repository.SportsRepository
 import com.freelancekc.fdjtechnicaltest.domain.usecase.GetAllLeaguesUseCase
+import com.freelancekc.fdjtechnicaltest.domain.usecase.GetFilteredTeamsByLeagueUseCase
 import com.freelancekc.fdjtechnicaltest.domain.usecase.GetTeamsByLeagueUseCase
 import dagger.Module
 import dagger.Provides
@@ -21,5 +22,10 @@ object UseCaseModule {
     fun provideGetTeamsByLeagueUseCase(
         sportsRepository: SportsRepository
     ): GetTeamsByLeagueUseCase = GetTeamsByLeagueUseCase(sportsRepository)
+
+    @Provides
+    fun provideGetFilteredTeamsByLeagueUseCase(
+        getTeamsByLeagueUseCase: GetTeamsByLeagueUseCase
+    ): GetFilteredTeamsByLeagueUseCase = GetFilteredTeamsByLeagueUseCase(getTeamsByLeagueUseCase)
 }
 

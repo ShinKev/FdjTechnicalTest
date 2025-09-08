@@ -1,8 +1,6 @@
 package com.freelancekc.fdjtechnicaltest.presentation.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,11 +11,14 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -25,9 +26,9 @@ import coil.request.ImageRequest
 import com.freelancekc.fdjtechnicaltest.presentation.theme.FdjTechnicalTestTheme
 
 @Composable
-fun ClubItem(
+fun TeamItem(
     imageUrl: String?,
-    clubName: String,
+    teamName: String,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -45,7 +46,7 @@ fun ClubItem(
             if (imageUrl.isNullOrEmpty()) {
                 Icon(
                     imageVector = Icons.Default.Image,
-                    contentDescription = clubName,
+                    contentDescription = teamName,
                     modifier = Modifier.fillMaxSize(),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -55,7 +56,7 @@ fun ClubItem(
                         .data(imageUrl)
                         .crossfade(true)
                         .build(),
-                    contentDescription = clubName,
+                    contentDescription = teamName,
                     contentScale = ContentScale.Fit
                 )
             }
@@ -65,11 +66,11 @@ fun ClubItem(
 
 @Preview(showBackground = true)
 @Composable
-fun ClubItemPreview() {
+fun TeamItemPreview() {
     FdjTechnicalTestTheme {
-        ClubItem(
+        TeamItem(
             imageUrl = null,
-            clubName = "Paris Saint-Germain",
+            teamName = "Paris Saint-Germain",
             modifier = Modifier.padding(8.dp)
         )
     }

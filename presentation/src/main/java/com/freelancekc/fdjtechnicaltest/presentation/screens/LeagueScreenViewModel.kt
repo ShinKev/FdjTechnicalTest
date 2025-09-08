@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freelancekc.fdjtechnicaltest.domain.models.League
 import com.freelancekc.fdjtechnicaltest.domain.usecase.GetAllLeaguesUseCase
-import com.freelancekc.fdjtechnicaltest.domain.usecase.GetTeamsByLeagueUseCase
+import com.freelancekc.fdjtechnicaltest.domain.usecase.GetFilteredTeamsByLeagueUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LeagueScreenViewModel @Inject constructor(
     private val getAllLeaguesUseCase: GetAllLeaguesUseCase,
-    private val getTeamsByLeagueUseCase: GetTeamsByLeagueUseCase
+    private val getFilteredTeamsByLeagueUseCase: GetFilteredTeamsByLeagueUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(LeagueScreenUiState())
@@ -102,7 +102,7 @@ class LeagueScreenViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoadingTeams = true, teamsError = null) }
 
-            getTeamsByLeagueUseCase(GetTeamsByLeagueUseCase.Params(leagueName)).collect { result ->
+            getFilteredTeamsByLeagueUseCase(GetFilteredTeamsByLeagueUseCase.Params(leagueName)).collect { result ->
                 result.fold(
                     onSuccess = { teams ->
                         _uiState.update { currentState ->
