@@ -19,6 +19,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -74,6 +75,8 @@ fun LeagueScreen(
     actioner: LeagueScreenActioner,
     modifier: Modifier = Modifier
 ) {
+    val focusManager = LocalFocusManager.current
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surfaceContainer,
         modifier = modifier.fillMaxSize(),
@@ -122,11 +125,8 @@ fun LeagueScreen(
                 AutocompleteDropdown(
                     suggestions = uiState.filteredLeagues,
                     onSuggestionClick = {
-                        actioner.invoke(
-                            LeagueScreenActions.OnSuggestionClick(
-                                it
-                            )
-                        )
+                        actioner.invoke(LeagueScreenActions.OnSuggestionClick(it))
+                        focusManager.clearFocus()
                     },
                     modifier = Modifier.padding(top = 78.dp, start = 16.dp, end = 16.dp)
                 )

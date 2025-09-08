@@ -45,6 +45,8 @@ class LeagueScreenViewModel @Inject constructor(
     }
 
     fun onLeagueSelected(league: League) {
+        val previousSelectedLeague = _uiState.value.selectedLeague
+
         _uiState.update { currentState ->
             currentState.copy(
                 selectedLeague = league,
@@ -54,6 +56,7 @@ class LeagueScreenViewModel @Inject constructor(
             )
         }
 
+        if (previousSelectedLeague == league) return
         loadTeamsForLeague(league.name)
     }
 
