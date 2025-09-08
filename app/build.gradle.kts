@@ -22,7 +22,8 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://www.thesportsdb.com/api/v1/json/50130162/\"")
+            // We are using the testKey for debug
+            buildConfigField("String", "BASE_URL", "\"https://www.thesportsdb.com/api/v1/json/123/\"")
         }
         release {
             isMinifyEnabled = false
@@ -30,7 +31,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://www.thesportsdb.com/api/v1/json/50130162/\"") // Replace with production URL in a real project
+            // We are using the premiumKey for production
+            buildConfigField("String", "BASE_URL", "\"https://www.thesportsdb.com/api/v1/json/50130162/\"")
         }
     }
     compileOptions {

@@ -1,5 +1,6 @@
 package com.freelancekc.fdjtechnicaltest.presentation.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,7 +25,9 @@ fun LeagueGridList(
     isLoading: Boolean = false
 ) {
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .background(MaterialTheme.colorScheme.surface)
+            .fillMaxSize()
     ) {
         when {
             isLoading -> {

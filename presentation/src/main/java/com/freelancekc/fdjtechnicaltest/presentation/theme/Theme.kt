@@ -17,7 +17,8 @@ import androidx.compose.runtime.Composable
 private val ColorScheme = lightColorScheme(
     primary = primaryBlue,
     secondary = secondaryBlue,
-    tertiary = tertiaryGray
+    tertiary = tertiaryGray,
+    surfaceContainer = surfaceContainerGray
 )
 
 @Composable
