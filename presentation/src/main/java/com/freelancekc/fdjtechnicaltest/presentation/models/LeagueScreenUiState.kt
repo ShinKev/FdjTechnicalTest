@@ -1,4 +1,4 @@
-package com.freelancekc.fdjtechnicaltest.presentation.screens
+package com.freelancekc.fdjtechnicaltest.presentation.models
 
 import com.freelancekc.fdjtechnicaltest.domain.models.League
 import com.freelancekc.fdjtechnicaltest.domain.models.Team

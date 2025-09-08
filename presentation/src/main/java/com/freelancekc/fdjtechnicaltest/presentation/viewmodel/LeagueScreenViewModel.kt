@@ -1,10 +1,11 @@
-package com.freelancekc.fdjtechnicaltest.presentation.screens
+package com.freelancekc.fdjtechnicaltest.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freelancekc.fdjtechnicaltest.domain.models.League
 import com.freelancekc.fdjtechnicaltest.domain.usecase.GetAllLeaguesUseCase
 import com.freelancekc.fdjtechnicaltest.domain.usecase.GetFilteredTeamsByLeagueUseCase
+import com.freelancekc.fdjtechnicaltest.presentation.models.LeagueScreenUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
